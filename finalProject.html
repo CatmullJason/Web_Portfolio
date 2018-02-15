@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Arnold Piano</title>
+      <link rel="stylesheet" type="text/css" href="finalProjectCSS.css">
+      <script src="finalProjectJS.js"></script>
+   </head>
+   <body id="mainBody" onload="pageLoad()">
+      <div class="header">Arnold's Studio!</div>
+      <div id="overlay" style="display: block;">
+         <div id ="masterpiece" style="display: block;">
+            <form onsubmit="return false">
+               Let's create something beautiful together.<br>
+               Please Enter Your Name:
+               <input type="text" id="name">
+               <button onclick="saveMasterpiece()">Save</button>
+            </form>
+         </div>         
+      </div>
+      <div class="container">
+         <div id="image" class="arnoldDiv">
+            <img id="arnMouth" style="padding-top: 0;" src="media/arnoldmouth.png">
+         </div><br>
+         <table class="toggleTable">
+            <tr>
+               <td>Arnold's<br> Normal Voice</td>
+               <td><label class="switch">
+                     <input type="checkbox" id="toggler" onClick="toggleIT()">
+                     <span class="slider round"></span>
+                  </label></td>
+               <td>Arnold's<br> Other Voices</td>
+            </tr>
+         </table>
+         <div class="holdsPiano">
+            <div class="cardFlipContainer" id="cardContainer">
+               <div class="flipper">
+                  <div class="front">
+                     <table class="arnoldstable">
+                        <tr>
+                           <td>
+                           </td>
+                           <td>
+                              <ul>
+                                 <li id="0" class="white b" onclick="keyDown(this); giveComments()">Trouble</li>
+                                 <li class="black as"></li>
+                                 <li id="1" class="white a" onclick="keyDown(this); giveComments()">Erased</li>
+                                 <li class="black gs"></li>
+                                 <li id="2" class="white g" onclick="keyDown(this); giveComments()">Mother</li>
+                                 <li class="black fs"></li>
+                                 <li id="3" class="white f" onclick="keyDown(this); giveComments()">Police</li>
+                                 <li id="4" class="white e" onclick="keyDown(this); giveComments()">Matter?</li>
+                                 <li class="black ds"></li>
+                                 <li id="5" class="white d" onclick="keyDown(this); giveComments()">Why Not?</li>
+                                 <li class="black cs"></li>
+                                 <li id="6" class="white c" onclick="keyDown(this); giveComments()">Be Back</li>
+                              </ul>
+                           </td>
+                           <td>
+                              <table class="buttontable">
+                                 <tr>
+                                    <td>
+                                       <button class="btn gray" type="button" onclick="clearData()">Clear</button>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <button id="recordbtn" class="btn red" type="button" onclick="toggleRecord(); toggleBodyBackground()">Record
+                                       </button>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <button id="green1" class="btn green" type="button" onclick="playAudioFile(0)">Play</button>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>
+                  <div class="back">
+                     <table class="arnoldstable">
+                        <tr>
+                           <td>
+                           </td>
+                           <td>
+                              <ul>
+                                 <li id="7" class="white b2" onclick="keyDown(this); giveComments()"><b>F</b></li>
+                                 <li class="black as"></li>
+                                 <li id="8" class="white a2" onclick="keyDown(this); giveComments()"><b>G</b></li>
+                                 <li class="black gs"></li>
+                                 <li id="9" class="white g2" onclick="keyDown(this); giveComments()"><b>A</b></li>
+                                 <li class="black fs"></li>
+                                 <li id="10" class="white f2" onclick="keyDown(this); giveComments()"><b>B</b></li>
+                                 <li id="11" class="white e2" onclick="keyDown(this); giveComments()"><b>C</b></li>
+                                 <li class="black ds"></li>
+                                 <li id="12" class="white d2" onclick="keyDown(this); giveComments()"><b>D</b></li>
+                                 <li class="black cs"></li>
+                                 <li id="13" class="white c" onclick="keyDown(this); giveComments()"><b>E</b></li>
+                              </ul>
+                           </td>
+                           <td>
+                              <table class="buttontable">
+                                 <tr>
+                                    <td>
+                                       <button class="btn gray" type="button" onclick="clearData()">Clear</button>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <button id="recordbtn2" class="btn red" type="button" onclick="toggleRecord(); toggleBodyBackground()">Record
+                                       </button>
+                                    </td>
+                                 </tr>
+                                 <tr>
+                                    <td>
+                                       <button id="green2" class="btn green" type="button" onclick="playAudioFile(0)">Play</button>
+                                    </td>
+                                 </tr>
+                              </table>
+                           </td>
+                        </tr>
+                     </table>
+                  </div>                
+               </div>             
+            </div>           
+         </div>
+         <div id="recording" class="alert" style="display:none"><strong>It's Recording!</strong></div>
+         <div id="noRecording" class="alert" style="display:none"><strong>No Recording!</strong> You have to record first!
+            You lack discipline!
+         </div>
+         <div id="recordingStopped" class="alert" style="display:none"><strong>Stopped Recording!</strong> Good! Lets play
+            it!
+         </div>
+         <div id="dataCleared" class="alert" style="display:none"><strong>Data Cleared!</strong> The data has cleared!</div>
+         <br><br>
+         <div class="comment alert " id="arnoldsComment" style="display:none"></div>
+      </div>  
+
+   </body>
+</html>

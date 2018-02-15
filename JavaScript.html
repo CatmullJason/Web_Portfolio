@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style2.css"> 
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body style="background-color: skyblue">
+        <h1>JavaScript Fundamentals</h1>
+        <div>
+            <h2>Conditional Statements/<br>
+                Functions/<br>
+                Parameters</h2>
+            <p>For this example we will change the HTML document itself through<br>
+                JavaScript and user input.<br><br>
+                Below you may enter 6 different options.<br>
+                First, try and enter the word <b>"up"</b>.<br>
+                Second, try and enter the word <b>"down"</b>.<br>        
+                Last, try and enter numbers <b>1-4</b>.<br></p>
+            <input type="text" id="example1" size="3" value=""/><br>
+            <button onclick="function1(document.getElementById('example1').value)">
+                Enter</button>
+        </div>
+        <div>
+            <img id="picture" src="null.png" style ="width: 200px">
+        </div><br><br>
+        <div>
+            <h2>Arrays/<br>
+                Objects/<br>
+                Loops</h2>
+            <p>This example will be looking at the use of arrays, objects and loops</p>
+            <p>Enter a name of an item like a type of fruit and click enter.<br>
+                This item will be entered into the array using a JavaScript function.<br>
+                Enter more items and watch as they are added to the array. The <br>
+                JavaScript code will also sort the array into alphabetical order.</p>
+            <input type="text" id="example2" size="3" value=""/><br>
+            <button onclick="function2(document.getElementById('example2').value)">
+                Enter</button>
+        </div>
+        <div id="array"></div><br><br>
+        <div>
+            <h2>JSON Parse & Stringify</h2>
+            <p>This next example is fairly simple. We will be using parse<br>
+                and stringify to show their method of operation and how you can<br>
+                take a JSON from a file and display the contents on the screen.</p>
+            <p>Click the button as many times as you like to switch between <br>
+                red, white, and blue.</p>
+            <button id="color" onclick="function3()">Change Color</button>
+        </div>
+        <div id="json"></div><br><br>
+        <div>
+            <h2>JavaScript and JSON Objects</h2>
+            <p>This example makes use of JavaScript objects. We will take the <br>
+                user's first and last name and age. We will then instantiate a new <br>
+                object (a person) and add another property to that object, namely <br>
+                their favorite school. I have included a method in the person<br>
+                prototype that creates one name from the first and last names <br>
+                as well. By adding all the object's properties into a string <br>
+                variable, it can then be displayed. Try it out.</p>
+            <label for='fname'>User's First Name:</label>
+            <input type="text" id="example4" size="3" value=""/><br>
+            <label for='lname'>User's Last Name:</label>
+            <input type="text" id="example5" size="3" value=""/><br>
+            <label for='age'>User's Age:</label>
+            <input type="text" id="example6" size="3" value=""/><br>
+            <button id="person" onclick="function4(document.getElementById('example4').value,
+                            document.getElementById('example5').value,
+                            document.getElementById('example6').value)">Enter</button>
+        </div>
+        <div id="object"></div><br><br>
+        <div>
+            <h2>Complex JSON objects</h2>
+            <p>This next part will pull from a more complex JSON object that<br>
+                includes multiple fields and nested arrays.<br>
+                The JSON object includes some information about myself<br>
+                including some of my favorite instruments.<br>
+                I can access an item deep within JSON nested arrays<br>
+                using nested for loops. Please see code for implementation.<br></p>
+            <p id="complexJSON"></p>
+            <script>
+                
+                //The complex JSON
+                var example = {
+                    "name": "Jason",
+                    "age": 35,
+                    "favorites": [
+                        {"instruments": [
+                                "saxophone",
+                                "piano",
+                                "guitar"
+                            ]},
+                            "soccer",
+                            "apple pie",
+                            "England",
+                            "Arsenal",
+                            "Art"
+                        ]
+                };
+                var found = "Favorite Instruments: <br>";
+                
+                //loop through the instruments and add them to found
+                for (i in example.favorites) {
+                    for (j in example.favorites[i].instruments) {
+                        found += example.favorites[i].instruments[j] + "<br>";
+                    }
+                }
+                document.getElementById("complexJSON").innerHTML =
+                        found;
+            </script>
+        </div>
+        <div id="complexJSON"></div><br><br>
+    </body>
+</html>

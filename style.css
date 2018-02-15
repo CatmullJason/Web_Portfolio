@@ -1,0 +1,58 @@
+p {
+    padding: 15px;
+}
+div {
+    width: 50%;
+    margin: auto;
+    background-color: burlywood;
+    box-shadow: 10px 10px 5px #888888;
+    padding: 25px;
+}
+
+body {
+    background: #ccc;
+    text-align: center;
+}
+
+#main {
+    width: 1000px;
+    height: 2000px;
+    background: lightblue;
+    margin: 25px auto;
+    padding: 10px;
+}
+
+h1, h2 {
+    text-align: center;
+    font-style: oblique;
+}
+
+.floating-box {
+    float: left;
+    width: 50%;
+}
+
+input {
+    width: 30%;
+    padding: 5px 15px;
+    margin: 7px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input [type=submit]{
+    padding: 14px 20px;
+    margin: 7px 0;
+    cursor: pointer;
+}
+
+table, th {
+    margin: 0px auto;
+    border: 1px solid black;
+    padding: 15px;
+    border-spacing: 10px;
+    box-shadow: 10px 10px 5px #888888;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Second Page Topics</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style2.css"> 
+   </head>
+   <body style="background-color: royalblue">
+      <a href="index.html" style="color: white">Return To Main Page</a><br><br><br>
+      <div class="container">
+         <h2>Just some simple examples of HTML5 tag use, namely<br> 
+            "Video", "Audio", and "Canvas".</h2><br><br>
+         <p><b>Video Element</b><br><br>"My wife and I visiting Versailles in France."</p>
+         <video width="600" controls>
+            <source src="media/Versailles.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+         </video><br><br><br><br>
+         <p><b>Audio Element</b><br><br>"Bubble"</p>
+         <audio controls>
+            <source src="media/Bubble.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+         </audio><br><br><br><br>
+         <p><b>Canvas Element</b></p>
+         <canvas id="fancy" width="400" height ="150" style="border:4px solid black;"></canvas>
+         <br><br><br><br>
+      </div>
+      <script>
+         var canvas = document.getElementById("fancy");
+         var context = canvas.getContext("2d");
+
+         context.font = "70px Broadway";
+         context.shadowColor = "lightblue";
+         context.shadowOffsetX = 10;
+         context.shadowOffsetY = 10;
+         context.fillText("ENJOY!", 65, 95);
+
+      </script>
+   </body>
+</html>

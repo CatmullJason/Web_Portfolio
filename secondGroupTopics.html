@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Second Page Topics</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style2.css"> 
+      <script type="text/javascript" src="script2.js"></script>
+   </head>
+   <body onload="insertMessage()">
+      <a href="index.html">Return To Main Page</a><br><br><br>
+      <div class="container">
+         <h2>Example 1: Retreiving JSON using AJAX</h2>
+         <p>This demonstration uses the AJAX technology to import<br>
+            a JSON file and create a story from some of its <br>
+            properties. There is some added CSS animation and <br>
+            transition for flavor. Click the button to import <br>
+            the JSON object and let the JavaScript function <br>
+            create the story.<br><br>
+            (Hover over the flashing box for the transition)</p><br>
+         <div class="change" id="jason"
+              style="color: white;"></div>
+         <div>
+            <button type="button" onclick="requestJSON('jason', 'lightblue')">Click Me</button>
+         </div><br><br>
+         <p>This next part is demonstrating some creation and triggering of CSS3<br>
+            transitions and animations with JavaScript.
+         <div>
+            <img src="media/instrument.png" id="slide">
+         </div>
+         <button type="button" onclick="slideOpen('slide')">Open</button>
+         <button type="button" onclick="slideClosed('slide')">Close</button> 
+
+      </div>
+      <div class="container2">
+         <h2>Example 2: Local Storage API, Storing and Retrieving<br>
+            and DOM Manipulation</h2>
+         <p>This example will demonstrate the storing and retrieving of<br>
+            of an object as well as DOM manipulation of the "Thank You"<br>
+            message at the very bottom of the example. Once you are done<br>
+            adding items to your cart and clear your cart, you may then <br>
+            reload that data stored in the local storage by clicking RELOAD.<br>
+            This example uses local storage rather than session storage so the <br>
+            information is not lost when you close this tab.</p>
+         <table class="producttable">
+            <thead>
+               <tr>
+                  <td><p id="car1name">Cool Car</p></td>
+                  <td><p id="car2name">Ferrari</p></td>
+                  <td><p id="car3name">Faster Ferrari</p></td>
+                  <td><p id="car4name">McLaren P1</p></td>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td><img class="productimage" src="media/car1.jpg"></td>
+                  <td><img class="productimage" src="media/car2.png"></td>
+                  <td><img class="productimage" src="media/car3.png"></td>
+                  <td><img class="productimage" src="media/car4.png"></td>
+               </tr> 
+               <tr>
+                  <td><p id="car1price">$8.20</p></td>
+                  <td><p id="car2price">$10.40</p></td>
+                  <td><p id="car3price">$9.45</p></td>
+                  <td><p id="car4price">$11.99</p></td>
+               </tr>
+               <tr>
+                  <td>
+                     <button
+                         type="button"
+                         id="button1"
+                         value=8.20
+                         onclick="addToCart(this.value, 'Cool Car')">
+                        Add To Cart
+                     </button>
+                  </td>
+                  <td>
+                     <button 
+                         type="button"
+                         id="button2"
+                         value=10.40
+                         onclick="addToCart(this.value, 'Ferrari')">
+                        Add To Cart
+                     </button>
+                  </td>
+                  <td>
+                     <button 
+                         type="button"
+                         id="button3"
+                         value=9.45
+                         onclick="addToCart(this.value, 'Faster Ferrari')">
+                        Add To Cart
+                     </button>
+                  </td>
+                  <td>
+                     <button 
+                         type="button"
+                         id="button4"
+                         value=11.99
+                         onclick="addToCart(this.value, 'McLaren P1')">
+                        Add To Cart
+                     </button>
+                  </td>
+               </tr> 
+            </tbody>
+         </table>
+         <p id="total"></p>
+         <p id="totalPrice"></p>
+         <button type="button" id="clearOut" onclick="clearOut()">CLEAR</button>
+         <button type="button" id="loadIT" onclick="load()">RELOAD DELETED CART</button><br><br><br>
+         <div id="example2">
+         <p id="tip" onload="insertMessage()"></p>
+         <button type="button" id="thankYou" onclick="clearMessage()">Clear Message</button>
+         </div>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,92 @@
+body {
+    opacity:0;
+    transition: opacity 5s;
+    -webkit-transition: opacity 5s;
+}
+
+img {
+    padding: 60px 0;
+    height: 50px;
+}
+
+span {
+    height: 90px;
+    line-height: 175px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#example1 {
+    background:gray;
+    width: 60%;
+    height: 50%;
+    margin: 100px auto;
+    transition: background 0.4s ease 0.7s, transform 0.7s ease-in-out 0.7s;
+    border-radius: 25px;
+}
+
+#example1:hover {
+    background:blue;
+    transform: scale(1.5) rotate(360deg);
+    -webkit-animation: pulse 1.5s infinite ease-in-out;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 100px purple;
+    }
+    50% {
+        -webkit-box-shadow: 0 0 100px white;
+    }
+    100% {
+        -webkit-box-shadow: 0 0 100px purple;
+    }
+}
+
+.cardFlipContainer {
+    perspective: 1000px;
+    position: relative;
+    display: inline-block;
+    padding: 25px;
+}
+
+.carFlipContainer:hover .flipper, .cardFlipContainer.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.cardFlipContainer, .front, .back {
+    width: 200px;
+    height: 200px;    
+}
+
+.flipper {
+    transition: 0.7s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.front, .back {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front:hover, .back:hover {
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: pulse 1.5s infinite ease-in-out;
+}
+
+.front {
+    background-color: darkturquoise;
+}
+
+.back {
+    background-color: lightgray;
+    transform: rotateY(180deg);
+}

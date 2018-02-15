@@ -1,0 +1,16 @@
+{
+    "name": "Jason",
+    "age": 35,
+    "favorites": [{
+            "instruments": [
+                "saxophone",
+                "piano",
+                "guitar"
+            ],
+            "sport": "soccer",
+            "food": "apple pie",
+            "place": "England",
+            "team": "Arsenal",
+            "hobby": "Art"            
+        }]
+}

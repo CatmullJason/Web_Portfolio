@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <title>Second Page Topics</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="style3.css"> 
+      <script type="text/javascript" src="script3.js"></script>
+   </head>
+   <body style="background-color: lightcyan; text-align: center"
+         onload="document.body.style.opacity='1'">
+      <a href="index.html">Return To Main Page</a><br><br><br>
+      <div style="text-align: center">
+         <h1>Standard JS Events and<br>
+            Designing, Defining, and Triggering CSS3<br>
+            Transitions, Transforms, and Animations
+         </h1>
+         <p>This example demonstrates some standard HTML/JavaScript/Transition<br>
+            events as well as some designing, defining, and triggering of CSS3<br>
+            transitions, transforms, and animations.</p>
+         <p>We have some flip cards in a spinning div. The form demonstrates some<br> 
+             more events with a size-changing submit button and a triggered alert.<br>
+             The entire page makes use of "onload" to fade in content.</p>   
+      </div>
+      <div id="example1"><br>
+         <p><b>HOVER OVER ME</b></p>
+         <div>
+            <div class="cardFlipContainer" onclick="this.classList.toggle('hover');"> 
+               <div class="flipper">
+                  <div class="front">
+                     <span>Mystery Car 1</span>
+                  </div>
+                  <div class="back">
+                     <img src="media/car3.png">
+                  </div>
+               </div>
+            </div>
+            <div class="cardFlipContainer" onclick="this.classList.toggle('hover');"> 
+               <div class="flipper">
+                  <div class="front">
+                     <span>Mystery Car 2</span>  
+                  </div>
+                  <div class="back">
+                     <img src="media/car2.png">
+                  </div>
+               </div>
+            </div>
+            <div class="cardFlipContainer" onclick="this.classList.toggle('hover');"> 
+               <div class="flipper">
+                  <div class="front">
+                     <span>Mystery Car 3</span>
+                  </div>
+                  <div class="back">
+                     <img src="media/car4.png">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div style="padding-bottom: 200px;">
+         <form style="width: 30%; margin: 0 auto;" onsubmit="notification()">
+            <fieldset>
+               <legend>Residence:</legend><br>
+               <p style="font-family: cursive">Please enter the city and state<br>
+                  where you live currently.</p>
+               <!--some examples of events-->
+               <label for="city">City</label><br>
+               <p class="city1" style='color:red' id="cityErr" hidden>Invalid</p>
+               <input onblur="validateCity(this); this.style.backgroundColor = 'white'" 
+                      id="city" name="City" 
+                      onfocus="this.style.backgroundColor = 'yellow'"><br><br><br>
+
+               <label for="state">State</label><br>
+               <p class="state1" style='color:red' id="stateErr" hidden>Invalid</p>
+               <input onblur="validateState(this); this.style.backgroundColor = 'white'" 
+                      size="2" id="state" name="State"
+                      onfocus="this.style.backgroundColor = 'yellow'"><br><br><br>
+
+               <!--more examples of events-->
+               <input type="submit" value="Submit" onmouseover="bigger(this)" onmouseout="smaller(this)"
+                      style="width: 60px; height: 25px"><br><br>
+            </fieldset>
+         </form>
+      </div>
+
+      <script>
+         function bigger(x) {
+             x.style.height = "64px";
+             x.style.width = "115px";
+         }
+         function smaller(x) {
+             x.style.height = "25px";
+             x.style.width = "60px";
+         }
+         function notification() {
+             alert("Your information has been submitted.");
+         }
+         function validateCity(data)
+         {
+             var cityValid = /.*\S.*/
+             if (cityValid.test(data.value))
+             {
+                 document.getElementById('cityErr').hidden = true;
+             } else
+             {
+                 document.getElementById('cityErr').hidden = false;
+             }
+         }
+         function validateState(data)
+         {
+             var stateValid = /^\s*(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY])\s*$/
+             if (stateValid.test(data.value))
+             {
+                 document.getElementById('stateErr').hidden = true;
+             } else
+             {
+                 document.getElementById('stateErr').hidden = false;
+             }
+         }
+      </script>
+   </body>
+</html>

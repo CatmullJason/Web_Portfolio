@@ -1,0 +1,18 @@
+{
+    "voices": [
+        "media/deep_trouble.wav", 
+        "media/erased.wav",
+        "media/mother_talk.wav", 
+        "media/police.wav",
+        "media/whats_the_matter.wav", 
+        "media/why_not.wav",
+        "media/t1_be_back.wav", 
+        "media/quickbass.wav", 
+        "media/quickvoice.wav",
+        "media/operatenor.wav", 
+        "media/malesolidnote.wav", 
+        "media/loud.wav",
+        "media/wierd.wav", 
+        "media/noidea.wav"
+    ]
+}
